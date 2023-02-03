@@ -20,13 +20,15 @@ public class DollarConvert {
             int fives = dollars / 5; dollars = dollars % 5;
             int ones = dollars;
             int cents = (int) Math.round((dollarsValue - (int) dollarsValue) * 100);
-            int quarters = cents / 25;  cents = cents % 25;
-            int dimes = cents / 10; cents = cents % 10;
-            int nickels = cents / 5; cents = cents % 5;
-            int pennies = cents;
-            if (cents > 0)
+            
+            if (cents > 0){
+                int quarters = cents / 25;  cents = cents % 25;
+                int dimes = cents / 10; cents = cents % 10;
+                int nickels = cents / 5; cents = cents % 5;
+                int pennies = cents;
                 printResults(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones, quarters,
                         dimes, nickels, pennies);
+            }
             else
                 printResult(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones);
 
@@ -37,7 +39,7 @@ public class DollarConvert {
     public static void printResult(double dollarsValue, int dollarActual, int hundreds, int fifties, int twenties,
             int tens, int fives, int ones) {
         if (dollarActual < 5)
-            System.out.printf("%n$%.2f sdf can be reduced to %nOnes: %d%n%n", dollarsValue, ones);
+            System.out.printf("%n$%.2f can be reduced to %nOnes: %d%n%n", dollarsValue, ones);
         else if (dollarActual < 10)
             System.out.printf("%n$%.2f can be reduced to %nFives: %d%nOnes: %d%n%n", dollarsValue, fives, ones);
         else if (dollarActual < 20)
@@ -61,7 +63,7 @@ public class DollarConvert {
             int tens, int fives, int ones, int quarters, int dimes, int nickels, int pennies) {
         if (dollarActual < 5)
             System.out.printf(
-                    "%n$%.2f sdf can be reduced to %Ones: %d%nQuarters: %d%nDimes: %d%nNickels: %d%nPennies: %d%n%n",
+                    "%n$%.2f can be reduced to %nOnes: %d%nQuarters: %d%nDimes: %d%nNickels: %d%nPennies: %d%n%n",
                     dollarsValue, ones, quarters, dimes, nickels, pennies);
         else if (dollarActual < 10)
             System.out.printf(
