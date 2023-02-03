@@ -1,4 +1,3 @@
-package TakeHomeLab;
 
 import java.util.Scanner;
 
