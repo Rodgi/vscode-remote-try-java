@@ -1,3 +1,5 @@
+package Week2.InPersonLab;
+
 import javax.swing.JOptionPane;
 
 public class ZipCodeValidation {

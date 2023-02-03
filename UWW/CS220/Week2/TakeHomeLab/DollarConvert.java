@@ -1,3 +1,4 @@
+package Week2.TakeHomeLab;
 import java.util.Scanner;
 
 public class DollarConvert {

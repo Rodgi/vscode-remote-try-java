@@ -1,4 +1,4 @@
-package temp;
+package Week2.temp;
 
 public class Practice3 { 
 
