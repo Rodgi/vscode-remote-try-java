@@ -5,11 +5,23 @@ import javax.swing.JOptionPane;
 public class DollarConvert {
     public static void main(String[] args) {
 
-        double[] userInputs = new double[5];
+        // User chooses amount of dollar amounts to enter
+        String userchoice = JOptionPane.showInputDialog("How many dollar amounts would you like to enter?");
+        // Try catch to check if the user input is a valid integer
+        try {
+            Integer.parseInt(userchoice);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid Input! Please enter a valid integer. Run Program Again.");
+            System.exit(0);
+        }
+        int numDollars = Integer.parseInt(userchoice);
+        double[] userInputs = new double[numDollars];
 
+        // Loop for the user to enter the dollar amounts into an array
         for (int i = 0; i < userInputs.length; i++) {
             String userInput = JOptionPane.showInputDialog("Enter a dollar amount");
 
+            // Try catch to check if the user input is a valid dollar amount
             try {
                 Double.parseDouble(userInput);
             } catch (NumberFormatException e) {
@@ -19,12 +31,14 @@ public class DollarConvert {
             }
             userInputs[i] = Double.parseDouble(userInput);
         }
+        // For Each loop to loop through the array and call the calculations method
         for (double dollarsValue : userInputs) {
             calculations(dollarsValue);
 
         }
     }
 
+    // Method to calculate the number of each denomination of bills and coins
     public static void calculations(double dollarsValue) {
         int dollars = (int) dollarsValue;
         int dollarActual = (int) dollarsValue;
@@ -41,6 +55,7 @@ public class DollarConvert {
         int ones = dollars;
         int cents = (int) Math.round((dollarsValue - (int) dollarsValue) * 100);
 
+        // If there are cents involved, then it calculates the quantity of each coin, then prints using the printResults method
         if (cents > 0) {
             int quarters = cents / 25;
             cents = cents % 25;
@@ -51,10 +66,13 @@ public class DollarConvert {
             int pennies = cents;
             printResults(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones, quarters,
                     dimes, nickels, pennies);
-        } else
+        }
+        // Else it prints the results of the calculations with dollar amounts using the printResult method
+        else
             printResult(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones);
     }
 
+    // Method to print the results of the calculations for dollar amounts without cents
     public static void printResult(double dollarsValue, int dollarActual, int hundreds, int fifties, int twenties,
             int tens, int fives, int ones) {
         if (dollarActual < 5)
@@ -78,6 +96,7 @@ public class DollarConvert {
 
     }
 
+    // Method to print the results of the calculations for dollar amounts with cents
     public static void printResults(double dollarsValue, int dollarActual, int hundreds, int fifties, int twenties,
             int tens, int fives, int ones, int quarters, int dimes, int nickels, int pennies) {
         if (dollarActual < 5)
