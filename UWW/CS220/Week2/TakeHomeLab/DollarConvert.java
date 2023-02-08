@@ -1,39 +1,58 @@
 package Week2.TakeHomeLab;
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class DollarConvert {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
+
         double[] userInputs = new double[5];
 
         for (int i = 0; i < userInputs.length; i++) {
-            System.out.println("Enter dollar amount.");
-            userInputs[i] = scnr.nextDouble();
+            String userInput = JOptionPane.showInputDialog("Enter a dollar amount");
+
+            try {
+                Double.parseDouble(userInput);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid Input! Please enter a valid dollar amount.");
+                i--;
+                continue;
+            }
+            userInputs[i] = Double.parseDouble(userInput);
         }
         for (double dollarsValue : userInputs) {
-            int dollars = (int) dollarsValue;
-            int dollarActual = (int) dollarsValue;
-            int hundreds = dollars / 100; dollars = dollars % 100;
-            int fifties = dollars / 50; dollars = dollars % 50;
-            int twenties = dollars / 20; dollars = dollars % 20;
-            int tens = dollars / 10; dollars = dollars % 10;
-            int fives = dollars / 5; dollars = dollars % 5;
-            int ones = dollars;
-            int cents = (int) Math.round((dollarsValue - (int) dollarsValue) * 100);
-            
-            if (cents > 0){
-                int quarters = cents / 25;  cents = cents % 25;
-                int dimes = cents / 10; cents = cents % 10;
-                int nickels = cents / 5; cents = cents % 5;
-                int pennies = cents;
-                printResults(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones, quarters,
-                        dimes, nickels, pennies);
-            }
-            else
-                printResult(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones);
+            calculations(dollarsValue);
 
         }
-        scnr.close();
+    }
+
+    public static void calculations(double dollarsValue) {
+        int dollars = (int) dollarsValue;
+        int dollarActual = (int) dollarsValue;
+        int hundreds = dollars / 100;
+        dollars = dollars % 100;
+        int fifties = dollars / 50;
+        dollars = dollars % 50;
+        int twenties = dollars / 20;
+        dollars = dollars % 20;
+        int tens = dollars / 10;
+        dollars = dollars % 10;
+        int fives = dollars / 5;
+        dollars = dollars % 5;
+        int ones = dollars;
+        int cents = (int) Math.round((dollarsValue - (int) dollarsValue) * 100);
+
+        if (cents > 0) {
+            int quarters = cents / 25;
+            cents = cents % 25;
+            int dimes = cents / 10;
+            cents = cents % 10;
+            int nickels = cents / 5;
+            cents = cents % 5;
+            int pennies = cents;
+            printResults(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones, quarters,
+                    dimes, nickels, pennies);
+        } else
+            printResult(dollarsValue, dollarActual, hundreds, fifties, twenties, tens, fives, ones);
     }
 
     public static void printResult(double dollarsValue, int dollarActual, int hundreds, int fifties, int twenties,
@@ -86,4 +105,5 @@ public class DollarConvert {
                     "%n$%.2f can be reduced to %nHundreds: %d%nFifties: %d%nTwenties: %d%nTens: %d%nFives: %d%nOnes: %d%nQuarters: %d%nDimes: %d%nNickels: %d%nPennies: %d%n%n",
                     dollarsValue, hundreds, fifties, twenties, tens, fives, ones, quarters, dimes, nickels, pennies);
     }
+
 }
