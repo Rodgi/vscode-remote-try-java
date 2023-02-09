@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch TakeHomeLab1",
+            "request": "launch",
+            "mainClass": "Week1.Labs.TakeHomeLab1",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch ZipCodeValidation",
+            "request": "launch",
+            "mainClass": "Week2.InPersonLab.ZipCodeValidation",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch DollarConvert",
+            "request": "launch",
+            "mainClass": "Week2.TakeHomeLab.DollarConvert",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch Practice3",
+            "request": "launch",
+            "mainClass": "Week2.temp.Practice3",
+            "projectName": "UWW_5f005dc0"
+        }
+    ]
+}
