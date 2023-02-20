@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch AccountTest",
+            "request": "launch",
+            "mainClass": "Week4.AccountPractice.AccountTest",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch ESPGame",
+            "request": "launch",
+            "mainClass": "Week3.TakeHomeLab.ESPGame",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
