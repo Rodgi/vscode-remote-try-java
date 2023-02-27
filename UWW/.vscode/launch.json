@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FileRead_BufferedReaderEx2",
+            "request": "launch",
+            "mainClass": "Week4.Lecture4Examples.FileRead_BufferedReaderEx2",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch FileWrite_PrintWritter_NewOrOverwriteEx",
+            "request": "launch",
+            "mainClass": "Week4.Lecture4Examples.FileWrite_PrintWritter_NewOrOverwriteEx",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
+            "name": "Launch LabProgram",
+            "request": "launch",
+            "mainClass": "Week5.InPersonLab.LabProgram",
+            "projectName": "UWW_5f005dc0"
+        },
+        {
+            "type": "java",
             "name": "Launch AccountTest",
             "request": "launch",
             "mainClass": "Week4.AccountPractice.AccountTest",
